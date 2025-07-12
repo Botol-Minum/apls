@@ -8,10 +8,13 @@
 import Foundation
 
 final class HomeViewModel: ObservableObject {
+//    @Published var isExpanded: Int = 
+
     let members = [
         Member(name: "Abdan", color: DesignColors.cyan),
         Member(name: "Alif", color: DesignColors.green),
         Member(name: "Filza", color: DesignColors.maroon),
         Member(name: "Mario", color: DesignColors.teal),
         Member(name: "Yudha", color: DesignColors.yellow),
-    ]}
+    ]
+}

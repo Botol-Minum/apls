@@ -9,17 +9,23 @@ import SwiftUI
 import Foundation
 
 struct HomeView: View {
-
+    
     @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationStack{
             ScrollView{
                 VStack (alignment: .leading,spacing: 12) {
-                    ForEach(viewModel.members) { member in
-                        MemberCard(name: member.name,
-                                   color: Color(member.color)
-                        )
+                    
+                    ForEach(viewModel.members) {  member in
+                        Button(action: {
+                            withAnimation(.easeInOut(duration: 0.5)){
+                            }
+                        }){
+                            MemberCard(name: member.name,
+                                       color: Color(member.color)
+                            )
+                        }
                     }
                     
                 }.padding(EdgeInsets(

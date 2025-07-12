@@ -8,6 +8,7 @@
 import SwiftUI
 
 class Member: Identifiable {
+    let id = UUID() 
     var name: String
     var color: String
     
