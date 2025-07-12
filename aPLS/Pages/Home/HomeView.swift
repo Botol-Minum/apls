@@ -18,14 +18,10 @@ struct HomeView: View {
                 VStack (alignment: .leading,spacing: 12) {
                     
                     ForEach(viewModel.members) {  member in
-                        Button(action: {
-                            withAnimation(.easeInOut(duration: 0.5)){
-                            }
-                        }){
-                            MemberCard(name: member.name,
-                                       color: Color(member.color)
-                            )
-                        }
+                        MemberCard(
+                            name: member.name,
+                            color: Color(member.color)
+                        )
                     }
                     
                 }.padding(EdgeInsets(
