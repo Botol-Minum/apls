@@ -31,7 +31,7 @@ struct HomeView: View {
                     trailing: 16)
                 )
             }.navigationTitle("Members")
-        }
+        }.tint(.colorBlackButton)
     }
 }
 

@@ -36,14 +36,20 @@ struct MemberCard: View {
                             .frame(maxWidth: .infinity,alignment: .leading)
                         
                         if isExpanded {
-                            VStack (alignment: .leading){
-                                Text("Check the aPLS")
-                                    .font(.body)
-                                    .fontWeight(.medium)
-                                    .foregroundStyle(.black)
-                            }.padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                                .background(Color.white)
-                                .cornerRadius(12)
+                            NavigationLink(
+                                destination: DetailViewWrapper()
+                                    .navigationTitle("aPLS")
+                                    .navigationBarTitleDisplayMode(.inline)
+                            ){
+                                VStack (alignment: .leading){
+                                    Text("Check the aPLS")
+                                        .font(.body)
+                                        .fontWeight(.medium)
+                                        .foregroundStyle(.black)
+                                }.padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                                    .background(Color.white)
+                                    .cornerRadius(12)
+                            }
                         }
                         
                     }.frame(maxWidth: .infinity,alignment: .leading)
