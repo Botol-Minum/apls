@@ -11,10 +11,10 @@ final class HomeViewModel: ObservableObject {
 //    @Published var isExpanded: Int = 
 
     let members = [
-        Member(name: "Abdan", color: DesignColors.cyan),
+        Member(name: "Abdan", color: DesignColors.blue),
         Member(name: "Alif", color: DesignColors.green),
-        Member(name: "Filza", color: DesignColors.maroon),
-        Member(name: "Mario", color: DesignColors.teal),
+        Member(name: "Filza", color: DesignColors.red),
+        Member(name: "Mario", color: DesignColors.purple),
         Member(name: "Yudha", color: DesignColors.yellow),
     ]
 }

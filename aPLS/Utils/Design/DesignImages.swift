@@ -7,6 +7,7 @@
 
 class DesignImages {
     static let mario = "MemojiMario"
+    static let abdan = "MemojiAbdan"
     
     static let linkedIn = "LogoLinkedIn"
     static let portfolio = "LogoPortfolio"
