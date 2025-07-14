@@ -6,5 +6,6 @@
 //
 
 class DesignIcons {
-    static let chevronRight: String = "chevron.right"
+    static let x: String = "xmark"
+    static let expandIcon: String = "arrow.up.left.and.arrow.down.right"
 }

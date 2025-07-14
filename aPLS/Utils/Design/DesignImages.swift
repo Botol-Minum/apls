@@ -10,5 +10,5 @@ class DesignImages {
     static let abdan = "MemojiAbdan"
     
     static let linkedIn = "LogoLinkedIn"
-    static let portfolio = "LogoPortfolio"
+    static let instagram = "LogoInstagram"
 }

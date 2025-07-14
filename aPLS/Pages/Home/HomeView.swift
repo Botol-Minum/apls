@@ -66,8 +66,11 @@ struct HomeView: View {
                         ForEach(viewModel.members) { member in
                             MemberCard(
                                 name: member.name,
+                                fullName: member.fullName,
                                 image:member.image,
-                                color: Color(member.color)
+                                color: Color(member.color),
+                                colorGallup: member.colorGallup,
+                                infoMember: member.infoMember
                             )
                         }
                     }
