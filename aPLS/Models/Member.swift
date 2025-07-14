@@ -10,10 +10,12 @@ import SwiftUI
 class Member: Identifiable {
     let id = UUID() 
     var name: String
+    var image: String
     var color: String
     
-    init(name: String, color: String) {
+    init(name: String, image: String, color: String) {
         self.name = name
+        self.image = image
         self.color = color
     }
 }

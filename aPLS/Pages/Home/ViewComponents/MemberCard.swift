@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MemberCard: View {
     var name: String
+    var image: String
     var color: Color
     @State var isExpanded: Bool = false
     
@@ -23,16 +24,13 @@ struct MemberCard: View {
                 VStack (){
                     if isExpanded {
                         Spacer()
-                        Image(DesignImages.mario)
+                        Image(image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .padding(.trailing, -32)
                     }
                     
                     VStack (alignment: .leading, spacing: 8){
-                        
-                        
-                        
                         if isExpanded {
                             NavigationLink(
                                 destination: DetailViewWrapper()
@@ -50,18 +48,19 @@ struct MemberCard: View {
                             }
                         }
                         else{
-                            HStack(spacing:20){
+                            HStack(spacing:10){
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 200, style: .continuous)
                                         .fill(Color.white.opacity(0.4))
                                         .frame(width:100, height: 100)
                                     
-                                    Image(DesignImages.mario)
+                                    Image(image)
                                         .resizable()
-                                        .scaledToFit()
+                                        .scaledToFill() // ku bingung kalo gambarnya sma malah okpoko aja di fit tapi kalo difill malah yg belakang ga beres
                                         .frame(width: 60)
                                     
                                 }
+                                
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(name)
                                         .font(.system(size: 25, weight: .semibold))
@@ -74,7 +73,7 @@ struct MemberCard: View {
                                         Text("|")
                                         Text("sleeper")
                                     }
-                                    .font(.system(size: 14))
+                                    .font(.system(size: 13))
                                     .foregroundColor(.black.opacity(0.8))
                                 }
                               

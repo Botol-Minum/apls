@@ -15,22 +15,58 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-//               ok ini aku masih bingung wkwkwkwk untuk bulat bulatnya
-// rencana mo ku tarok sini bulet buletnya
+                Circle()
+                    .fill(Color.orange.opacity(0.4))
+                    .frame(width: 300, height: 350)
+                    .blur(radius: 39.1)
+                    .offset(x: 150, y: -500)
+                    .zIndex(-1)
+               
+                
+                Circle()
+                    .fill(Color.pink.opacity(0.4))
+                    .frame(width: 300, height: 350)
+                    .blur(radius: 69.1)
+                    .offset(x: -150, y: -180) // posisi kanan atas
+                
+                Circle()
+                    .fill(Color.blue.opacity(0.4))
+                    .frame(width: 300, height: 350)
+                    .blur(radius: 69.1)
+                    .offset(x: 150, y: 1)
+                    .zIndex(-1)
+                
+                Circle()
+                    .fill(Color.green.opacity(0.4))
+                    .frame(width: 300, height: 350)
+                    .blur(radius: 69.1)
+                    .offset(x: -150, y: 210)
+                    .zIndex(-1)
+                
+                Circle()
+                    .fill(Color.purple.opacity(0.4))
+                    .frame(width: 300, height: 350)
+                    .blur(radius: 69.1)
+                    .offset(x: 150, y: 450)
+                    .zIndex(-1)
+                
+              
+                
+               
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 12) {
-                        
                         Text("Botol Minum Member’s")
                             .font(.system(size: 30))
                             .fontWeight(.bold)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: 180, alignment: .leading)
                             .padding(.top, 24)
                             .padding(.bottom, 8)
                         
                         ForEach(viewModel.members) { member in
                             MemberCard(
                                 name: member.name,
+                                image:member.image,
                                 color: Color(member.color)
                             )
                         }
