@@ -14,7 +14,7 @@ final class HomeViewModel: ObservableObject {
         Member(name: "Abdan",fullName: "Abdan Fauzan Nurtsani",image:DesignImages.abdan, color: DesignColors.yellow,colorGallup: DesignColorGallups.yellow, infoMember: InfoMember(age: "20th", role: "Designer", gallup: "Analytical")),
         
         Member(name: "Alif",fullName: "Muhamad Alif\nAnwar",
-               image:DesignImages.mario ,
+               image:DesignImages.abdan ,
                color: DesignColors.red,
                colorGallup: DesignColorGallups.red ,
                infoMember: InfoMember(age: "20th", role: "Designer", gallup: "Analytical")

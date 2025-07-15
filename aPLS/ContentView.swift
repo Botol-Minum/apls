@@ -13,9 +13,9 @@ struct ContentView: View {
     var body: some View {
         
         if hasCompletedOnboarding {
-            HomeView()
+            HomeView().preferredColorScheme(.light)
         } else {
-            OnBoardingView()
+            OnBoardingView().preferredColorScheme(.light)
         }
     }
 }

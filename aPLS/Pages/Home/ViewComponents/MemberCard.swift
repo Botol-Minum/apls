@@ -17,115 +17,86 @@ struct MemberCard: View {
     @State var isExpanded: Bool = false
     
     var body: some View {
-        
-        Button(action: {
-            withAnimation(.easeInOut(duration: 0.4)){
-                isExpanded.toggle()
-            }
-        }){
-            HStack(alignment: .center){
+        ZStack {
+            VStack(alignment: .center){
                 VStack (){
-                    if isExpanded {
-                        Spacer()
-                        HStack(){
-                            Image(systemName: isExpanded ? DesignIcons.x : DesignIcons.expandIcon)
-                                    .frame(width: 24, height: 24)
-                                    .foregroundColor(.black)
-                                    .padding(8)
-                                    .background(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                                    .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
-                                    .font(.system(size: 20))
-                        }
-                        .frame(maxWidth:.infinity, alignment: .trailing)
-                        .padding()
-//                        .background(.blue) ini mar
-                        
-                        
-                        VStack(alignment:.center){
-                            Image(image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding()
-                                
-                        }
-                        .frame(width:230, height: 230)
-                        .background((Color.white.opacity(0.4)))
-                        .clipShape(.circle)
-                        .zIndex(-1)
-                    }
-                    
-                    
-//                    konten bawah
-                    VStack (alignment: .leading, spacing: 8){
+                    //                    konten bawah
+                    VStack (alignment: .center, spacing: 8){
                         if isExpanded {
-                            NavigationLink(
-                                destination: DetailViewWrapper()
-                                    .navigationTitle("aPLS")
-                                    .navigationBarTitleDisplayMode(.inline)
-                            ){
+                            VStack {
+                                VStack{
+                                    Image(image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .padding()
+                                }
+                                .padding(.horizontal,16)
+                                .background((Color.white.opacity(0.4)))
+                                .clipShape(.circle)
                                 
-                                VStack(alignment:.leading, spacing:10){
+                                HStack(alignment: .bottom){
                                     VStack (alignment: .leading){
                                         Text(fullName)
                                             .multilineTextAlignment(.leading)
                                             .font(.system(size: 26, weight: .semibold))
                                             .foregroundColor(.black)
-                                           
-                                    }                                .frame(width: 245, alignment: .leading)
                                         
-
-                                    
-                                        HStack(spacing:10){
-                                            Text("Check the aPLS")
-                                                .font(.system(size: 17))
-                                                .fontWeight(.medium)
-                                                .foregroundStyle(.white)
+                                        NavigationLink(
+                                            destination: DetailViewWrapper()
+                                                .navigationTitle("aPLS")
+                                                .navigationBarTitleDisplayMode(.inline)
+                                        )  {
                                             
-                                            Image(systemName:"arrow.right")
-                                                .foregroundColor(.white)
-                                              
-                                        }.padding(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
-                                            .background(Color.black)
-                                            .cornerRadius(12)
+                                            HStack(spacing:10){
+                                                Text("Check the aPLS")
+                                                    .font(.system(size: 17))
+                                                    .fontWeight(.medium)
+                                                    .foregroundStyle(.white)
+                                                
+                                                Image(systemName:"arrow.right")
+                                                    .foregroundColor(.white)
+                                                
+                                            }.padding(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
+                                                .background(Color.black)
+                                                .cornerRadius(12)
+                                            
+                                        }
+                                        .frame(maxWidth:.infinity,alignment:.leading)
+                                        
+                                    } .frame(maxWidth: 245, alignment: .leading)
                                     
-                                }
-                                .frame(maxWidth:.infinity,alignment:.leading)
-                                
-                               
-                                
-                                VStack {
                                     Spacer()
                                     
-                                    Button(action:{}){
-                                        Image(DesignImages.instagram)
-                                            .frame(width: 24, height: 24)
-                                            .foregroundColor(.black)
-                                            .padding(8)
-                                            .background(Color.white)
-                                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                                            .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
-                                            .font(.system(size: 20))
+                                    VStack {
+                                        Button(action:{}){
+                                            Image(DesignImages.instagram)
+                                                .frame(width: 24, height: 24)
+                                                .foregroundColor(.black)
+                                                .padding(8)
+                                                .background(Color.white)
+                                                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                                .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
+                                                .font(.system(size: 20))
+                                        }
+                                        
+                                        Button(action: {}){
+                                            Image(DesignImages.linkedIn)
+                                                .frame(width: 24, height: 24)
+                                                .foregroundColor(.black)
+                                                .padding(8)
+                                                .background(Color.white)
+                                                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                                .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
+                                                .font(.system(size: 20))
+                                        }
                                     }
-                                    
-                                    Button(action: {}){
-                                        Image(DesignImages.linkedIn)
-                                            .frame(width: 24, height: 24)
-                                            .foregroundColor(.black)
-                                            .padding(8)
-                                            .background(Color.white)
-                                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                                            .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
-                                            .font(.system(size: 20))
-                                    }
-                                }
-                            }
-                            
+                                }.padding(.horizontal, 20)
+        
+                            }.padding(.top, 16)
+                                .padding(.bottom, 36)
                         }
                         else{
-                            
                             HStack(spacing:10){
-                                
                                 VStack(alignment:.center){
                                     Image(image)
                                         .resizable()
@@ -136,7 +107,6 @@ struct MemberCard: View {
                                 .frame(width:90, height: 90)
                                 .background((Color.white.opacity(0.4)))
                                 .clipShape(.circle)
-                                
                                 
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(name)
@@ -152,7 +122,8 @@ struct MemberCard: View {
                                         
                                         HStack{
                                             Text("1st Gallup :")
-                                                .font(.system(size: 13, weight:.semibold))
+                                                .font(.caption)
+                                                .fontWeight(.regular)
                                                 .foregroundColor(Color(colorGallup))
                                             Text(infoMember.gallup)
                                         }
@@ -160,43 +131,53 @@ struct MemberCard: View {
                                     }
                                     .font(.system(size: 13))
                                     .foregroundColor(.black.opacity(0.8))
-                                    
                                 }
-                                Spacer()
-                                Image(systemName: isExpanded ? DesignIcons.x : DesignIcons.expandIcon)
-                                        .frame(width: 24, height: 24)
-                                        .foregroundColor(.black)
-                                        .padding(8)
-                                        .background(Color.white)
-                                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                                        .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
-                                        .font(.system(size: 20))
                             }
-                            .padding()
+                            .padding(.vertical, 14)
+                            .padding(.horizontal, 12)
                         }
-                        
-                        
-                        
-                    }.frame(maxWidth: .infinity ,alignment: .leading)
-//                        .background(.red) ini mar
-                    
-                    
-                }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -24))
-                    .frame(maxHeight: .infinity, alignment: isExpanded ? .bottom : .center)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-           
-                
-               
-                
-                
-                
-            }.padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 24))
-                .frame(height: isExpanded ? 501 : 114, alignment: isExpanded ? .bottom : .center)
-                .frame(maxWidth: .infinity,alignment: .leading)
-                .background(color)
-                .cornerRadius(isExpanded ? 16 : 12)
+                    }
+                    .frame(maxWidth: .infinity ,alignment: .leading)
+                }
+                .frame(maxHeight: .infinity, alignment: isExpanded ? .bottom : .center)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .frame(maxWidth: .infinity,alignment: .leading)
+            .background(color)
+            .cornerRadius(16)
+            
+            
+            // Button Expand
+            VStack{
+                Button(action: {
+                    withAnimation(.bouncy(duration: 0.4)){
+                        isExpanded.toggle()
+                    }
+                }){
+                    Image(systemName: isExpanded ? DesignIcons.x : DesignIcons.expandIcon)
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.black)
+                        .padding(8)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
+                        .font(.system(size: 20))
+                    //                            .animation(nil, value: isExpanded)
+                }
+            }.frame(maxWidth: .infinity,alignment: isExpanded ? .topTrailing : .trailing)
+                .frame(maxHeight: .infinity,
+                       alignment:  isExpanded ? .topTrailing : .trailing
+                )
+                .padding(.horizontal, 12)
+                .padding(.vertical, isExpanded ? 16 : 8)
+            
         }
+        
+        
+        
+        
+        
+        
     }
 }
 #Preview {

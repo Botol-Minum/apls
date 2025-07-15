@@ -56,12 +56,12 @@ struct HomeView: View {
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("Botol Minum Member’s")
-                            .font(.system(size: 30))
-                            .fontWeight(.bold)
-                            .frame(maxWidth: 180, alignment: .leading)
-                            .padding(.top, 24)
-                            .padding(.bottom, 8)
+//                        Text("Botol Minum Member’s")
+//                            .font(.system(size: 30))
+//                            .fontWeight(.bold)
+//                            .frame(maxWidth: 180, alignment: .leading)
+//                            .padding(.top, 24)
+//                            .padding(.bottom, 8)
                         
                         ForEach(viewModel.members) { member in
                             MemberCard(
@@ -72,15 +72,27 @@ struct HomeView: View {
                                 colorGallup: member.colorGallup,
                                 infoMember: member.infoMember
                             )
+                        
                         }
                     }
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
                 }
             }
-            .navigationTitle("")
-            .navigationBarHidden(true)
-        }
+            .navigationTitle("Member")
+            
+//            .navigationBarTitleDisplayMode(.inline)
+//            .navigationBarHidden(true)
+//            .toolbar {
+//                ToolbarItem(placement: .principal) {
+//                    VStack {
+//                        Text("Judul Baris Pertama")
+//                            .font(.headline)
+//                        Text("Subjudul atau Baris Kedua")
+//                            .font(.subheadline)
+//                    }
+//                }}
+        }.tint(.black)
     }
 }
 
