@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnBoardingView: View {
     @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
-
+    
     var body: some View {
         GeometryReader{ geomtry in
             
@@ -27,8 +27,8 @@ struct OnBoardingView: View {
                         height: 187,
                         color: Color(DesignColors.memojiGreen))
                     .rotationEffect(.degrees(-17))
-                        .offset(x: geomtry.size.width - 110,y:-120 )
-                        .blur(radius: 4)
+                    .offset(x: geomtry.size.width - 110,y:-120 )
+                    .blur(radius: 4)
                     
                     
                     MemojiView(
@@ -38,7 +38,7 @@ struct OnBoardingView: View {
                     .rotationEffect(.degrees(14))
                     .offset(x: geomtry.size.width * 0.1, y:20)
                     .blur(radius: 2)
-                  
+                    
                     
                     MemojiView(
                         width: 40,
@@ -62,7 +62,7 @@ struct OnBoardingView: View {
                     .offset(x: geomtry.size.width * 0.54, y:geomtry.size.height / 3.7)
                     .blur(radius: 2)
                     
-               
+                    
                     VStack(spacing: 24){
                         MemojiView(width: 110,height: 110,color: Color(DesignColors.memojiYellow))
                         
@@ -109,7 +109,7 @@ struct OnBoardingView: View {
                             startPoint: .bottom, endPoint: .top)
                     )
                 Spacer()
-
+                
                 VStack(spacing: 36){
                     Text("Academy Personal Learning Statement")
                         .font(.largeTitle)
@@ -119,7 +119,7 @@ struct OnBoardingView: View {
                     Text("A personal statement about how to consciously learn and act in the midst of advancing AI technology.")
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: 300)
-                        
+                    
                 }.padding()
                 
                 Spacer()
@@ -127,14 +127,12 @@ struct OnBoardingView: View {
                 Button(action: {
                     hasCompletedOnboarding = true
                 }){
-                    VStack {
-                        Text("Get Started")
-                            .foregroundStyle(.white)
-                    }
+                    Text("Get Started")
+                        .foregroundColor(.white)
                         .frame(height: 40)
                         .frame(maxWidth: 300)
                         .padding(.vertical,4)
-                        .background(Color(DesignColors.blackButton))
+                        .background(Color("ColorblackButton"))
                         .cornerRadius(40)
                 }
                 Spacer()

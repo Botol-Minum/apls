@@ -45,7 +45,7 @@ struct MemberCard: View {
                                             .foregroundColor(.black)
                                         
                                         NavigationLink(
-                                            destination: DetailViewWrapper()
+                                            destination: DetailViewRepresentable()
                                                 .navigationTitle("aPLS")
                                                 .navigationBarTitleDisplayMode(.inline)
                                         )  {
