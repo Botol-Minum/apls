@@ -14,7 +14,11 @@ struct MemberCard: View {
     var color: Color
     var colorGallup: String
     var infoMember : InfoMember
-    @State var isExpanded: Bool = false
+    var linkMember : LinkMember
+    
+    
+    var isExpanded: Bool
+    var onToggle: () -> Void
     
     var body: some View {
         ZStack {
@@ -68,7 +72,7 @@ struct MemberCard: View {
                                     Spacer()
                                     
                                     VStack {
-                                        Button(action:{}){
+                                        Button(action:{openLink(linkMember.instagram)}){
                                             Image(DesignImages.instagram)
                                                 .frame(width: 24, height: 24)
                                                 .foregroundColor(.black)
@@ -79,7 +83,7 @@ struct MemberCard: View {
                                                 .font(.system(size: 20))
                                         }
                                         
-                                        Button(action: {}){
+                                        Button(action: {openLink(linkMember.linkedin)}){
                                             Image(DesignImages.linkedIn)
                                                 .frame(width: 24, height: 24)
                                                 .foregroundColor(.black)
@@ -91,7 +95,7 @@ struct MemberCard: View {
                                         }
                                     }
                                 }.padding(.horizontal, 20)
-        
+                                
                             }.padding(.top, 16)
                                 .padding(.bottom, 36)
                         }
@@ -146,12 +150,11 @@ struct MemberCard: View {
             .background(color)
             .cornerRadius(16)
             
-            
             // Button Expand
             VStack{
                 Button(action: {
                     withAnimation(.bouncy(duration: 0.4)){
-                        isExpanded.toggle()
+                        onToggle()
                     }
                 }){
                     Image(systemName: isExpanded ? DesignIcons.x : DesignIcons.expandIcon)
@@ -162,7 +165,6 @@ struct MemberCard: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
                         .font(.system(size: 20))
-                    //                            .animation(nil, value: isExpanded)
                 }
             }.frame(maxWidth: .infinity,alignment: isExpanded ? .topTrailing : .trailing)
                 .frame(maxHeight: .infinity,
@@ -174,10 +176,14 @@ struct MemberCard: View {
         }
         
         
-        
-        
-        
-        
+    }
+    func openLink(_ urlString: String) {
+        guard let url = URL(string: urlString),
+              UIApplication.shared.canOpenURL(url) else {
+            print("Invalid or unsupported URL: \(urlString)")
+            return
+        }
+        UIApplication.shared.open(url)
     }
 }
 #Preview {
