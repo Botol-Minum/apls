@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailViewWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
+    func makeUIViewController(context: Context) -> DetailViewController {
         return DetailViewController()
     }
     

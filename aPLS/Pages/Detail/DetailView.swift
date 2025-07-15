@@ -37,8 +37,7 @@ class DetailViewController: UIViewController {
         view.addSubview(scrollView)
         view.backgroundColor = .white
         scrollView.addSubview(contentView)
-        contentView.addSubview(mainStackView)
-        
+        contentView.addSubview(mainStackView) 
         NSLayoutConstraint.activate([
             
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -51,11 +50,12 @@ class DetailViewController: UIViewController {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(greaterThanOrEqualTo: scrollView.heightAnchor),
              
             mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+            mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
     
