@@ -29,11 +29,10 @@ struct MemberCard: View {
                         if isExpanded {
                             VStack {
                                 VStack{
-                                    Image(image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .padding()
+                                    GIFView(gifName: "abdan2")
                                 }
+                                .frame(width: 344)
+                                .frame(height: 344)
                                 .padding(.horizontal,16)
                                 .background((Color.white.opacity(0.4)))
                                 .clipShape(.circle)
