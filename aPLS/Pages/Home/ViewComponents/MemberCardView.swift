@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct MemberCard: View {
+struct MemberCardView: View {
     var name: String
     var fullName: String
     var image: String
+    var gif: String
     var color: Color
     var colorGallup: String
     var infoMember : InfoMember
     var linkMember : LinkMember
+    var listAPLS: [APLS]
     
     
     var isExpanded: Bool
@@ -29,10 +31,10 @@ struct MemberCard: View {
                         if isExpanded {
                             VStack {
                                 VStack{
-                                    GIFView(gifName: "abdan2")
+                                    GIFView(gifName: gif)
                                 }
-                                .frame(width: 344)
-                                .frame(height: 344)
+                                .frame(width: 325)
+                                .frame(height: 325)
                                 .padding(.horizontal,16)
                                 .background((Color.white.opacity(0.4)))
                                 .clipShape(.circle)
@@ -45,7 +47,7 @@ struct MemberCard: View {
                                             .foregroundColor(.black)
                                         
                                         NavigationLink(
-                                            destination: DetailViewRepresentable()
+                                            destination: DetailViewRepresentable(listAPLS: listAPLS)
                                                 .navigationTitle("aPLS")
                                                 .navigationBarTitleDisplayMode(.inline)
                                         )  {
@@ -104,7 +106,7 @@ struct MemberCard: View {
                                     Image(image)
                                         .resizable()
                                         .scaledToFill()
-                                        .padding()
+//                                        .padding()
                                         .frame(width: 80)
                                 }
                                 .frame(width:90, height: 90)

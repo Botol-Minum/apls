@@ -12,18 +12,22 @@ class Member: Identifiable {
     var name: String
     var fullName: String
     var image: String
+    var gif: String
     var color: String
     var colorGallup: String
     var infoMember: InfoMember
     var linkMember: LinkMember
+    var listAPLS: [APLS]
     
-    init(name: String, fullName:String , image: String, color: String, colorGallup:String ,infoMember : InfoMember, linkMember: LinkMember) {
+    init(name: String, fullName:String , image: String, gif: String, color: String, colorGallup:String ,infoMember : InfoMember, linkMember: LinkMember, listAPLS: [APLS]) {
         self.name = name
         self.fullName = fullName
         self.image = image
+        self.gif = gif
         self.color = color
         self.colorGallup = colorGallup
         self.infoMember = infoMember
         self.linkMember = linkMember
-    }   
+        self.listAPLS = listAPLS
+    }
 }

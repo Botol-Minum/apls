@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct DetailViewWrapper: UIViewControllerRepresentable {
+    var listAPLS: [APLS]
+    
     func makeUIViewController(context: Context) -> DetailViewController {
-        return DetailViewController()
+        return DetailViewController(listAPLS: listAPLS)
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {

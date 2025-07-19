@@ -41,7 +41,7 @@ extension UIImageView {
                 }
             }
 
-            let duration = 1.5
+            let duration = 6.0
             DispatchQueue.main.async {
                 self.animationImages = images
                 self.animationDuration = duration

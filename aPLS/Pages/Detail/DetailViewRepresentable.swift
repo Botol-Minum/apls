@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct DetailViewRepresentable: View {
+    var listAPLS: [APLS]
+    
     var body: some View {
-        DetailViewWrapper().ignoresSafeArea()
+        DetailViewWrapper(listAPLS: listAPLS).ignoresSafeArea()
     }
 }

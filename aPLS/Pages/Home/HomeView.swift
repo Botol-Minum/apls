@@ -63,14 +63,16 @@ struct HomeView: View {
 //                            .padding(.bottom, 8)
 //                        
                         ForEach(viewModel.members) { member in
-                            MemberCard(
+                            MemberCardView(
                                 name: member.name,
                                 fullName: member.fullName,
                                 image:member.image,
+                                gif: member.gif,
                                 color: Color(member.color),
                                 colorGallup: member.colorGallup,
                                 infoMember: member.infoMember,
                                 linkMember: member.linkMember,
+                                listAPLS: member.listAPLS,
                                 isExpanded: expandedCardId == member.id,
                                 onToggle: {
                                     if expandedCardId == member.id {
