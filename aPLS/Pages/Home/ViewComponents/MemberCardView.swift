@@ -125,8 +125,8 @@ struct MemberCardView: View {
                                             Text(infoMember.role)
                                         }
                                         
-                                        HStack{
-                                            Text("1st Gallup :")
+                                        HStack(spacing: 4){
+                                            Text("1st Gallup:")
                                                 .font(.caption)
                                                 .fontWeight(.regular)
                                                 .foregroundColor(Color(colorGallup))

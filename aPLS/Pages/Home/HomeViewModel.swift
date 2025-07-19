@@ -18,7 +18,7 @@ final class HomeViewModel: ObservableObject {
             gif: DesignGIFs.gifAbdan,
             color: DesignColors.yellow,
             colorGallup: DesignColorGallups.yellow,
-            infoMember: InfoMember(age: "24 Years old", role: "Designer", gallup: "Deliberative"),
+            infoMember: InfoMember(age: "Age: 24", role: "Designer", gallup: "Deliberative"),
             linkMember: LinkMember(
                 instagram: "https://www.instagram.com/abdanfzn/",
                 linkedin: "https://www.linkedin.com/in/abdan-fauzan/"
@@ -39,7 +39,7 @@ final class HomeViewModel: ObservableObject {
             gif: DesignGIFs.gifAlif,
             color: DesignColors.red,
             colorGallup: DesignColorGallups.red ,
-            infoMember: InfoMember(age: "22 Years old", role: "Designer", gallup: "Analytical"),
+            infoMember: InfoMember(age: "Age: 22", role: "Designer", gallup: "Analytical"),
             linkMember: LinkMember(
                 instagram: "https://www.instagram.com/a.lifanwar/",
                 linkedin: "https://www.linkedin.com/in/muhamad-alif-anwar/"
@@ -59,7 +59,7 @@ final class HomeViewModel: ObservableObject {
             gif: DesignGIFs.gifFilza,
             color: DesignColors.blue,
             colorGallup: DesignColorGallups.blue,
-            infoMember: InfoMember(age: "22 Years old", role: "Designer", gallup: "Context"),
+            infoMember: InfoMember(age: "Age: 22", role: "Designer", gallup: "Context"),
             linkMember: LinkMember(
                 instagram: "https://www.instagram.com/filzarr/",
                 linkedin: "https://www.linkedin.com/in/filza-rizki-ramadhan-17424b1b3/"
@@ -80,7 +80,7 @@ final class HomeViewModel: ObservableObject {
             gif: DesignGIFs.gifMario,
             color: DesignColors.green,
             colorGallup: DesignColorGallups.green,
-            infoMember: InfoMember(age: "24 Years old", role: "Designer", gallup: "Individualization"),
+            infoMember: InfoMember(age: "Age: 24", role: "Designer", gallup: "Individualization"),
             linkMember: LinkMember(
                 instagram: "https://www.instagram.com/mario_pan/",
                 linkedin: "https://www.linkedin.com/in/mario-pandapotan-simarmata/"
@@ -101,7 +101,7 @@ final class HomeViewModel: ObservableObject {
             gif: DesignGIFs.gifYudha,
             color: DesignColors.purple,
             colorGallup: DesignColorGallups.purple,
-            infoMember: InfoMember(age: "26 Years old", role: "Designer", gallup: "Ideation"),
+            infoMember: InfoMember(age: "Age: 26", role: "Designer", gallup: "Ideation"),
             linkMember: LinkMember(
                 instagram: "https://www.instagram.com/ydhprtam/",
                 linkedin: "https://www.linkedin.com/in/ydhprtam/"
